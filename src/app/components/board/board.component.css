@@ -1,0 +1,16 @@
+.board {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 300px;
+  margin: auto;
+  position: relative;
+  width: 300px;
+}
+
+.cell {
+  margin: 2px;
+  width: calc(33.33% - 4px);
+  height: calc(33.33% - 4px);;
+}

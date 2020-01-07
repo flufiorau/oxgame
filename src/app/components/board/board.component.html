@@ -1,0 +1,31 @@
+<ng-container *ngIf="!gameStart">
+  <p>Please select number of players</p>
+  <label>
+    <select #numberOfPlayers>
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+  </label>
+  <button (click)="startGame(numberOfPlayers.value)">Start game</button>
+</ng-container>
+
+<ng-container *ngIf="gameStart">
+  <button (click)="restartGame()">Restart</button>
+  <ng-container *ngIf="coreService.gameBoardList">
+    <div class="board">
+      <div class="cell" *ngFor="let cell of coreService.gameBoardList, let index = index">
+        <app-cell
+          [playerSymbol]="nextPlayer"
+          [gameEnd]="gameEnd"
+          [cell]="cell"
+          (turn)="checkAfterTurn(index, $event)"></app-cell>
+      </div>
+
+      <app-logs *ngIf="showLogs && coreService.statistics" [statistics]="coreService.statistics"></app-logs>
+
+      <app-end-info *ngIf="winnerName" [winnerName]="winnerName" (closeIt)="closeAppInfo()"></app-end-info>
+
+    </div>
+  </ng-container>
+  <button *ngIf="gameEnd" (click)="showLogs = !showLogs">{{showLogs ? 'Close' : 'Show'}} Logs</button>
+</ng-container>

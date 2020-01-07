@@ -1,0 +1,19 @@
+.logs_wrapper {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(111, 111, 111, .2);
+  z-index: 1;
+}
+
+.logs {
+  background-color: #fff;
+  border: 2px solid gray;
+  margin: auto;
+  max-height: 275px;
+  overflow-y: scroll;
+  padding: 0 10px;
+}

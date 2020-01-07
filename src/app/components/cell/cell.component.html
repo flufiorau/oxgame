@@ -1,0 +1,2 @@
+<button (click)="turnFromPlayer()" [disabled]="gameEnd || cell !== ' '"
+        class="cell__button">{{cell ? cell : ' '}}</button>
