@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class CellComponent {
 
   @Input() public gameEnd: boolean;
-  @Input() public cell: boolean;
+  @Input() public cell: string;
   @Input() public playerSymbol: string;
   @Output() public turn = new EventEmitter<string>();
 

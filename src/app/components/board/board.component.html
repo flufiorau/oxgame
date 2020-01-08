@@ -1,12 +1,12 @@
 <ng-container *ngIf="!gameStart">
   <p>Please select number of players</p>
   <label>
-    <select #numberOfPlayers>
+    <select #numberOfPlayers class="number-of-players">
       <option value="1">1</option>
       <option value="2">2</option>
     </select>
   </label>
-  <button (click)="startGame(numberOfPlayers.value)">Start game</button>
+  <p><button class="btn__start-game" (click)="startGame(numberOfPlayers.value)">Start game</button></p>
 </ng-container>
 
 <ng-container *ngIf="gameStart">
