@@ -70,9 +70,11 @@ export class BoardComponent {
 
   restartGame() {
     this.coreService.gameBoardList = this.coreService.gameBoardList.map(() => ' ');
+    this.playerWaitForBotTurn = false;
+    this.showLogs = false;
     this.gameStart = false;
     this.gameEnd = false;
-    this.showLogs = false;
+    this.nextPlayer = 'X';
     this.coreService.statistics = [];
   }
 
